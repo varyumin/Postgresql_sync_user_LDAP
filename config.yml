@@ -1,0 +1,34 @@
+config:
+  LDAP_server:
+    server: '10.210.17.116'
+    port: 636
+    user: VARyumin@sberned
+    password: 1130688W@r
+    base_DN: DC=sberned,DC=lc
+
+  DB_sever:
+    server: '10.210.17.135'
+    port: '5432'
+    db_name: 'postgres'
+    user: 'postgres'
+    password: 'postgres'
+    tech_user:
+      - postgres
+      - sgr
+      - css
+
+  Mapping:
+
+    read:
+      group_bind: 'CN=read.prod.sgr,OU=PostgreSQL,OU=Linux Server,DC=sberned,DC=lc'
+      grant:
+        - SELECT
+      default: True
+
+    write:
+      group_bind: 'CN=write.prod.sgr,OU=PostgreSQL,OU=Linux Server,DC=sberned,DC=lc'
+      grant:
+        - SELECT
+        - INSERT
+        - UPDATE
+        - DELETE
