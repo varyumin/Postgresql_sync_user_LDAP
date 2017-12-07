@@ -8,11 +8,9 @@
 
 # Install
 
-##### pip install psycopg2
-##### pip install ldap3
-##### pip install PYyaml
-
 ##### git clone https://bitbucket.sberned.ru/scm/~varyumin/sync-user-from-ldap-to-postgresql.git
+
+##### pip install -r requirements.txt
 
 # Configurate
 
