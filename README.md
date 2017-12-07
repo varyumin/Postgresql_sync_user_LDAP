@@ -55,14 +55,15 @@ config:
 # Run test and Add to cron
 
 ```
-sync_to_ad.py --help
-usage: sync_to_ad.py [-h] [-r RUN]
+usage: sync_to_ad.py [-h] [-f FILE] [-r RUN]
 
 optional arguments:
-   -h, --help         show this help message and exit
-   -r RUN, --run RUN  sync or analyz(DEFAULT). sync: WARNING! Will be
-                      synchronized users with Active Directory analyz: Analyzes
-                      user but NO CHANGES it produces!
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  Specify the configuration file. If you do not specify,
+                        the default file will be used ./config.yml
+  -r RUN, --run RUN     sync or analyz(DEFAULT). sync: WARNING! Will be
+                        synchronized users with Active Directory analyz:
+                        Analyzes user but NO CHANGES it produces!
 ```
 ## Сперва запускаем с флагом analyz и смотрим какие изменения произойдут
 

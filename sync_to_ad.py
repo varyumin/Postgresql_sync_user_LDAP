@@ -8,6 +8,8 @@ import traceback
 import argparse
 
 parser = argparse.ArgumentParser()
+parser.add_argument('-f', '--file', default="config.yml",
+                    help='Specify the configuration file. If you do not specify, the default file will be used ./config.yml')
 parser.add_argument('-r', '--run', default="analyz",
                     help='sync or analyz(DEFAULT). sync: WARNING! Will be synchronized users with Active Directory analyz: Analyzes user but NO CHANGES it produces!')
 args = vars(parser.parse_args())
@@ -15,7 +17,7 @@ logging.basicConfig(format=u'[%(asctime)s] \t%(filename)s[LINE:%(lineno)d]# %(le
                     level=logging.DEBUG, filename=u'/var/log/sync_pgsql_to_ad.log')
 
 try:
-    conf = yaml.load(open('./config.yml'))['config']
+    conf = yaml.load(open(args['file']))['config']
     ldap = conf['LDAP_server']
     db = conf['DB_sever']
     tech_users = db['tech_user']
